@@ -38,9 +38,12 @@ namespace Nasledovanie
                                                                     inputNumbeFacultet.Text, abiturient1.NumberCoints,
                                                                     abiturient1.Fio, abiturient1.DataOfBirth, abiturient1.Pol);
 
+            
             Student student = (Student)abiturient2;
             students.Add(student);
             dataStudent.ItemsSource = students;
+            abiturients.Remove(abiturient1);
+            dataAbiturient.Items.Refresh();
             dataStudent.Items.Refresh();
         }
 
