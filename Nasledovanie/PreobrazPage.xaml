@@ -1,0 +1,63 @@
+﻿<Page x:Class="Nasledovanie.PreobrazPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Nasledovanie"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PreobrazPage">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label Content="Класс Абитуриент"/>
+            <DataGrid Name="dataAbiturient" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="ФИО" Binding="{Binding Fio}"/>
+                    <DataGridTextColumn Width="*" Header="Дата рождения" Binding="{Binding Fio}"/>
+                    <DataGridTextColumn Width="*" Header="Пол" Binding="{Binding Pol}"/>
+                    <DataGridTextColumn Width="*" Header="Количество баллов" Binding="{Binding NumberCoints}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Label Content="Класс Студент"/>
+            <DataGrid Name="dataStudent" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="ФИО" Binding="{Binding Fio}"/>
+                    <DataGridTextColumn Width="*" Header="Дата рождения" Binding="{Binding Fio}"/>
+                    <DataGridTextColumn Width="*" Header="Пол" Binding="{Binding Pol}"/>
+                    <DataGridTextColumn Width="2*" Header="Количество баллов при поступлении" Binding="{Binding NumberCoints}"/>
+                    <DataGridTextColumn Width="*" Header="Курс" Binding="{Binding Kyrs}"/>
+                    <DataGridTextColumn Width="*" Header="Группа" Binding="{Binding Team}"/>
+                    <DataGridTextColumn Width="*" Header="Факультет" Binding="{Binding Facultet}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Label Content="Введите курс"/>
+            <TextBox Name="inputNumberKyrs"/>
+
+            <Label Content="Введите группу"/>
+            <TextBox Name="inputNumbeTeam"/>
+
+            <Label Content="Введите факультет"/>
+            <TextBox Name="inputNumbeFacultet"/>
+            <Button Content="Преобразовать" Click="Preobraz"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Content="Назад" Click="Back"/>
+        </StackPanel>
+    </Grid>
+</Page>
